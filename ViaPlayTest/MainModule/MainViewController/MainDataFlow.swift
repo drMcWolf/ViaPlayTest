@@ -1,5 +1,4 @@
 public enum Main {
-    /// Описывает выходные события из модуля
     public enum Output {}
 
     enum Obtain {
