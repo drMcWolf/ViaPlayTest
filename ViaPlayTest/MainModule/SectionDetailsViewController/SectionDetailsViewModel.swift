@@ -30,8 +30,10 @@ extension SectionDetailsViewModel: SectionDetailsBusinessLogic {
     func obtain(request: SectionDetails.Obtain.Request) {
         service.obtainDetails(section: section) { [weak self] result in
             switch result {
-            case let .success(model):
-                self?.childViewModel.value = .init(title: "Section description", description: model.description)
+            case .success:
+                let title = self?.section.title ?? "Unknown section"
+                let description = self?.section.sectionDescription ?? "Ooops! Something went wrong."
+                self?.childViewModel.value = .init(title: title, description: description)
             case let .failure(error):
                 self?.error.value = .init(title: "Error", message: error.localizedDescription, actionTitle: "Try again")
             }

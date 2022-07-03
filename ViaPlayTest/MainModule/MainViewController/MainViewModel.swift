@@ -32,7 +32,7 @@ extension MainViewModel: MainBusinessLogic {
             switch result {
             case let .success(models):
                 self?.models = models
-                let cellViewModels = models.map { UITableViewCell.ViewModel(title: $0.title) }
+                let cellViewModels = models.map { UITableViewCell.ViewModel(title: $0.title ?? "Unknown Section") }
                 self?.childViewModel.value = .init(title: "Sections list", cellViewModels: cellViewModels)
             case let .failure(error):
                 self?.error.value = .init(title: "Error", message: error.localizedDescription, actionTitle: "Try again")

@@ -11,15 +11,14 @@ protocol SectionDetailsAssemblyProtocol {
     func assembly(section: VPSection) -> SectionDetailsDisplayLogic
 }
 
-final class SectionDetailsAssembly {
-    
-}
+final class SectionDetailsAssembly {}
 
 extension SectionDetailsAssembly: SectionDetailsAssemblyProtocol {
     func assembly(section: VPSection) -> SectionDetailsDisplayLogic {
         let networkLayer = NetworkLayer()
         let api = MainApiService(networkLayer: networkLayer)
-        let service = MainService(api: api)
+        let storage = StorageManager()
+        let service = MainService(api: api, storage: storage)
         let viewModel = SectionDetailsViewModel(section: section, service: service)
         let viewController = SectionDetailsViewController(viewModel: viewModel)
         return viewController
