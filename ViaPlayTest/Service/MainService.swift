@@ -6,6 +6,11 @@ protocol MainServiceProtocol: AnyObject {
 }
 
 final class MainService {
+    private struct Constants {
+        static let emptyString = ""
+        static let hrefPostfix = "{?dtg,productsPerPage}"
+        static let nilLinkErrorMessage = "Unable to process the url"
+    }
     private let api: MainApiServiceProtocol
     private let storage: StorageManagerProtocol
     
@@ -25,7 +30,7 @@ extension MainService: MainServiceProtocol {
                     dto.forEach { sectionDto in
                         if let section = self.storage.findFirsOrCreate(new: VPSection.self, by: "id", with: sectionDto.id) {
                             section.id = sectionDto.id
-                            section.link = sectionDto.href.replacingOccurrences(of: "{?dtg,productsPerPage}", with: "")
+                            section.link = sectionDto.href.replacingOccurrences(of: Constants.hrefPostfix, with: Constants.emptyString)
                             section.title = sectionDto.title
                             models.append(section)
                         }
@@ -46,7 +51,7 @@ extension MainService: MainServiceProtocol {
     
     func obtainDetails(section: VPSection, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let link = section.link else {
-            completion(.failure(ErrorDTO(code: -1, message: "Unable to process the url")))
+            completion(.failure(ErrorDTO(code: -1, message: Constants.nilLinkErrorMessage)))
             return
         }
         api.fetchSectionDetails(link: link) { result in

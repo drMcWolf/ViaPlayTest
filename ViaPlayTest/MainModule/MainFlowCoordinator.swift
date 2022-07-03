@@ -3,9 +3,8 @@ import UIKit
 public protocol MainFlowCoordinatorProtocol {}
 
 final class MainFlowCoordinator: MainFlowCoordinatorProtocol {
-    // MARK: - Public Properties
-    
     // MARK: - Private Properties
+    
     private let navigationController: UINavigationController
     private let mainScreenAssembly: MainAssemblyProtocol
     private let sectionDetailsAssembly: SectionDetailsAssemblyProtocol
@@ -29,13 +28,14 @@ final class MainFlowCoordinator: MainFlowCoordinatorProtocol {
     
 }
 
+// MARK: - Private Methods
+
 private extension MainFlowCoordinator {
     func showSectiondDetails(section: VPSection) {
         let sectionDetailsViewController = sectionDetailsAssembly.assembly(section: section)
         navigationController.pushViewController(sectionDetailsViewController, animated: true)
     }
 }
-
 
 // MARK: - SomeFeatureModuleOutput
 

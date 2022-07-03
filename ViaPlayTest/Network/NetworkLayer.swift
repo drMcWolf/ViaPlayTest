@@ -11,6 +11,8 @@ public extension NetworkLayerProtocol {
 }
 
 final class NetworkLayer {
+    // MARK: - Private Properties
+    
     private let decoder: JSONDecoder = .init()
     private let session: URLSession = .init(configuration: .default)
     
@@ -20,6 +22,7 @@ final class NetworkLayer {
     }
 }
 
+// MARK: - NetworkLayerProtocol
 extension NetworkLayer: NetworkLayerProtocol {
     func get(url: String, parameters: [String : Any]?, completion: @escaping (Result<Data, Error>) -> Void) {
         guard

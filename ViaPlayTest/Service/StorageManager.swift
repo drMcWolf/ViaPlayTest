@@ -1,10 +1,3 @@
-//
-//  StorageManager.swift
-//  ViaPlayTest
-//
-//  Created by Ivan Makarov on 03.07.2022.
-//
-
 import CoreData
 
 protocol StorageManagerProtocol {

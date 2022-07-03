@@ -36,7 +36,6 @@
 		EA658144286C22B3001DFD61 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658143286C22B3001DFD61 /* MainViewModel.swift */; };
 		EA658147286C244A001DFD61 /* MainApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658146286C244A001DFD61 /* MainApiService.swift */; };
 		EA65814C286C2483001DFD61 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658149286C2483001DFD61 /* NetworkLayer.swift */; };
-		EA65814E286C2483001DFD61 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65814B286C2483001DFD61 /* AsyncOperation.swift */; };
 		EA658152286C258B001DFD61 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658150286C258B001DFD61 /* Configurable.swift */; };
 		EA658158286C25E0001DFD61 /* ErrorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658156286C25E0001DFD61 /* ErrorDTO.swift */; };
 		EA65815B286C275D001DFD61 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65815A286C275D001DFD61 /* MainService.swift */; };
@@ -74,7 +73,6 @@
 		EA658143286C22B3001DFD61 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EA658146286C244A001DFD61 /* MainApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApiService.swift; sourceTree = "<group>"; };
 		EA658149286C2483001DFD61 /* NetworkLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
-		EA65814B286C2483001DFD61 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		EA658150286C258B001DFD61 /* Configurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		EA658156286C25E0001DFD61 /* ErrorDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorDTO.swift; sourceTree = "<group>"; };
 		EA65815A286C275D001DFD61 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -91,13 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EA2DF992287099A200516F2E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		EA2DF9A62871777600516F2E /* SectionDetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +130,6 @@
 		EA65810E286C1F38001DFD61 /* ViaPlayTest */ = {
 			isa = PBXGroup;
 			children = (
-				EA2DF992287099A200516F2E /* Models */,
 				EA658159286C274A001DFD61 /* Service */,
 				EA658154286C25E0001DFD61 /* DTO */,
 				EA658145286C2438001DFD61 /* API */,
@@ -200,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				EA658149286C2483001DFD61 /* NetworkLayer.swift */,
-				EA65814B286C2483001DFD61 /* AsyncOperation.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -330,7 +319,6 @@
 				EA2DF9AE28717AAC00516F2E /* SectionDetailsDataFlow.swift in Sources */,
 				EA65814C286C2483001DFD61 /* NetworkLayer.swift in Sources */,
 				EA2DF9BC2871CBEE00516F2E /* StorageManager.swift in Sources */,
-				EA65814E286C2483001DFD61 /* AsyncOperation.swift in Sources */,
 				EA658147286C244A001DFD61 /* MainApiService.swift in Sources */,
 				EA2DF9A8287177B200516F2E /* SectionDetailsViewController.swift in Sources */,
 				EA2DF9B228717C3F00516F2E /* VPSectionDetailsDTO.swift in Sources */,

@@ -3,6 +3,9 @@ import UIKit
 class SectionLoadingView: UIView {
     private struct Constants {
         static let spacing: CGFloat = 8
+        static let loadingViewCornerRadius: CGFloat = 5
+        static let separatorHeight: CGFloat = 1
+        static let titleLoadingViewWidth: CGFloat = 200
     }
     
     // MARK: - Subviews
@@ -39,7 +42,7 @@ private extension SectionLoadingView {
     func commonInit() {
         addSubviews()
         makeConstraints()
-        titleLoadingView.layer.cornerRadius = 5
+        titleLoadingView.layer.cornerRadius = Constants.loadingViewCornerRadius
     }
 
     func addSubviews() {
@@ -54,10 +57,10 @@ private extension SectionLoadingView {
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         titleLoadingView.translatesAutoresizingMaskIntoConstraints = false
-        titleLoadingView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        titleLoadingView.widthAnchor.constraint(equalToConstant: Constants.titleLoadingViewWidth).isActive = true
         
         separatorView.translatesAutoresizingMaskIntoConstraints = false
-        separatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        separatorView.heightAnchor.constraint(equalToConstant: Constants.separatorHeight).isActive = true
         separatorView.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
     }
 }

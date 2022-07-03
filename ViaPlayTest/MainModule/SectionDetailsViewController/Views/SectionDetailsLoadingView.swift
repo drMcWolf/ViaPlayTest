@@ -1,15 +1,11 @@
-//
-//  SectionDetailsLoadingView.swift
-//  ViaPlayTest
-//
-//  Created by Ivan Makarov on 03.07.2022.
-//
-
 import UIKit
 
 class SectionDetailsLoadingView: UIView {
     private struct Constants {
         static let spacing: CGFloat = 8
+        static let loadingViewCornerRadius: CGFloat = 5
+        static let titleLoadinViewSize: CGSize = .init(width: 150, height: 50)
+        static let descriptionLoadingView: CGSize = .init(width: 200, height: 50)
     }
     
     // MARK: - Subviews
@@ -25,15 +21,16 @@ class SectionDetailsLoadingView: UIView {
 
     private lazy var titleLoadingView: LoadingView = {
         let loadingView = LoadingView()
-        loadingView.layer.cornerRadius = 5
+        loadingView.layer.cornerRadius = Constants.loadingViewCornerRadius
         return loadingView
     }()
     
     private lazy var descriptionLoadingView: LoadingView = {
         let loadingView = LoadingView()
-        loadingView.layer.cornerRadius = 5
+        loadingView.layer.cornerRadius = Constants.loadingViewCornerRadius
         return loadingView
     }()
+    
     // MARK: - UIView
 
     override init(frame: CGRect) {
@@ -44,19 +41,21 @@ class SectionDetailsLoadingView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
-    private func commonInit() {
+private extension SectionDetailsLoadingView {
+    func commonInit() {
         addSubviews()
         makeConstraints()
     }
 
-    private func addSubviews() {
+    func addSubviews() {
         addSubview(stackView)
     }
 
-    private func makeConstraints() {
+    func makeConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -64,11 +63,11 @@ class SectionDetailsLoadingView: UIView {
         stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
         titleLoadingView.translatesAutoresizingMaskIntoConstraints = false
-        titleLoadingView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        titleLoadingView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        titleLoadingView.widthAnchor.constraint(equalToConstant: Constants.titleLoadinViewSize.width).isActive = true
+        titleLoadingView.heightAnchor.constraint(equalToConstant: Constants.titleLoadinViewSize.height).isActive = true
         
         descriptionLoadingView.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLoadingView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        descriptionLoadingView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        descriptionLoadingView.widthAnchor.constraint(equalToConstant: Constants.descriptionLoadingView.width).isActive = true
+        descriptionLoadingView.heightAnchor.constraint(equalToConstant: Constants.descriptionLoadingView.height).isActive = true
     }
 }

@@ -1,10 +1,3 @@
-//
-//  SectionDetailsAssembly.swift
-//  ViaPlayTest
-//
-//  Created by Ivan Makarov on 03.07.2022.
-//
-
 import Foundation
 
 protocol SectionDetailsAssemblyProtocol {
@@ -12,6 +5,8 @@ protocol SectionDetailsAssemblyProtocol {
 }
 
 final class SectionDetailsAssembly {}
+
+// MARK: - SectionDetailsAssemblyProtocol
 
 extension SectionDetailsAssembly: SectionDetailsAssemblyProtocol {
     func assembly(section: VPSection) -> SectionDetailsDisplayLogic {

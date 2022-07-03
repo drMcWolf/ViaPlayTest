@@ -1,13 +1,11 @@
-//
-//  SectionDetailsView.swift
-//  ViaPlayTest
-//
-//  Created by Ivan Makarov on 03.07.2022.
-//
-
 import UIKit
 
 final class SectionDetailsView: UIView {
+    private struct Constants {
+        static let leadingSpacing: CGFloat = 20
+        static let trailingSpacing: CGFloat = 20
+    }
+    
     // MARK: - Subviews
 
     private lazy var descriptionLabel: UILabel = {
@@ -26,26 +24,30 @@ final class SectionDetailsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
-    private func commonInit() {
+private extension SectionDetailsView {
+    func commonInit() {
         addSubviews()
         makeConstraints()
     }
 
-    private func addSubviews() {
+    func addSubviews() {
         addSubview(descriptionLabel)
     }
 
-    private func makeConstraints() {
+    func makeConstraints() {
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
         descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20).isActive = true
+        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.leadingSpacing).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Constants.trailingSpacing).isActive = true
     }
 }
+
+// MARK: - Configurable
 
 extension SectionDetailsView: Configurable {
     struct ViewModel {

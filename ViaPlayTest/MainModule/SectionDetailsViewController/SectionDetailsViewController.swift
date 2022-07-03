@@ -1,10 +1,3 @@
-//
-//  SectionDetailsViewController.swift
-//  ViaPlayTest
-//
-//  Created by Ivan Makarov on 03.07.2022.
-//
-
 import UIKit
 
 protocol SectionDetailsDisplayLogic: UIViewController {
@@ -13,9 +6,12 @@ protocol SectionDetailsDisplayLogic: UIViewController {
 }
 
 class SectionDetailsViewController: UIViewController {
-    private let viewModel: SectionDetailsBusinessLogic
+    // MARK: - Private Properties
     
+    private let viewModel: SectionDetailsBusinessLogic
     private lazy var contentView = SectionDetailsContentView()
+    
+    // MARK: - UIView
     
     override func loadView() {
         view = contentView
@@ -37,12 +33,17 @@ class SectionDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func obtainInitialState() {
+}
+
+// MARK: - Private Methods
+
+private extension SectionDetailsViewController {
+    func obtainInitialState() {
         contentView.showLoading()
         viewModel.obtain(request: .init())
     }
     
-    private func addObservers() {
+    func addObservers() {
         viewModel.childViewModel.bind { [weak self] contentViewModel in
             self?.display(viewModel: contentViewModel)
         }
@@ -58,6 +59,8 @@ class SectionDetailsViewController: UIViewController {
         }
     }
 }
+
+// MARK: - SectionDetailsDisplayLogic
 
 extension SectionDetailsViewController: SectionDetailsDisplayLogic {
     func display(viewModel: SectionDetailsView.ViewModel) {

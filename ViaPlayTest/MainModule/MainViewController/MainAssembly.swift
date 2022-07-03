@@ -4,8 +4,11 @@ protocol MainAssemblyProtocol {
 }
 
 
-final class MainAssembly: MainAssemblyProtocol {
-    
+final class MainAssembly { }
+
+// MARK: - MainAssemblyProtocol
+
+extension MainAssembly: MainAssemblyProtocol {
     func assemble(output: MainModuleOutput) -> MainDisplayLogic {
         let networkLayer = NetworkLayer()
         let api = MainApiService(networkLayer: networkLayer)

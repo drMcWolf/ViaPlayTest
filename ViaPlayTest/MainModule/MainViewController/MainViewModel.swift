@@ -13,11 +13,23 @@ protocol MainBusinessLogic {
 }
 
 final class MainViewModel {
+    private struct Constants {
+        static let unknownSectionTitle = "Unknown section"
+        static let contentTitle = "Sections list"
+        static let errorTitle = "Error"
+        static let errorActionTitle = "Try again"
+        static let loadingTitle = "Loading..."
+    }
+    
+    // MARK: - Private Properties
+    
     private let service: MainServiceProtocol
     private var models: [VPSection] = []
     private let output: MainModuleOutput
     
-    let childViewModel: Observable<SectionsListView.ViewModel> = .init(SectionsListView.ViewModel(title: "Loading...", cellViewModels: []))
+    // MARK: - Public Properties
+    
+    let childViewModel: Observable<SectionsListView.ViewModel> = .init(SectionsListView.ViewModel(title: Constants.loadingTitle, cellViewModels: []))
     let error: Observable<ErrorView.ViewModel?> = .init(nil)
     
     init(service: MainServiceProtocol,  output: MainModuleOutput) {
@@ -26,16 +38,18 @@ final class MainViewModel {
     }
 }
 
+// MARK: - MainBusinessLogic
+
 extension MainViewModel: MainBusinessLogic {
     func obtain(request: Main.Obtain.Request) {
         service.obtain { [weak self] result in
             switch result {
             case let .success(models):
                 self?.models = models
-                let cellViewModels = models.map { UITableViewCell.ViewModel(title: $0.title ?? "Unknown Section") }
-                self?.childViewModel.value = .init(title: "Sections list", cellViewModels: cellViewModels)
+                let cellViewModels = models.map { UITableViewCell.ViewModel(title: $0.title ?? Constants.unknownSectionTitle) }
+                self?.childViewModel.value = .init(title: Constants.contentTitle, cellViewModels: cellViewModels)
             case let .failure(error):
-                self?.error.value = .init(title: "Error", message: error.localizedDescription, actionTitle: "Try again")
+                self?.error.value = .init(title: Constants.errorTitle, message: error.localizedDescription, actionTitle: Constants.errorActionTitle)
             }
         }
     }

@@ -3,6 +3,7 @@ import UIKit
 class SectionsListLoadingView: UIView {
     private struct Constants {
         static let spacing: CGFloat = 8
+        static let stackViewHeight: CGFloat = 224
     }
     
     // MARK: - Subviews
@@ -26,15 +27,17 @@ class SectionsListLoadingView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
-    private func commonInit() {
+private extension SectionsListLoadingView {
+    func commonInit() {
         addSubviews()
         makeConstraints()
     }
 
-    private func addSubviews() {
+    func addSubviews() {
         addSubview(stackView)
         
         for _ in 0...4 {
@@ -42,11 +45,11 @@ class SectionsListLoadingView: UIView {
         }
     }
 
-    private func makeConstraints() {
+    func makeConstraints() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        stackView.heightAnchor.constraint(equalToConstant: 224).isActive = true
+        stackView.heightAnchor.constraint(equalToConstant: Constants.stackViewHeight).isActive = true
     }
 }

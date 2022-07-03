@@ -19,6 +19,7 @@ public final class SectionsListView: UIView {
     
     
     // MARK: - Private Properties
+    
     private var viewModel: ViewModel?
     
     // MARK: - UIView
@@ -31,20 +32,22 @@ public final class SectionsListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
-    private func commonInit() {
+private extension SectionsListView {
+    func commonInit() {
         backgroundColor = .white
         addSubviews()
         makeConstraints()
     }
 
-    private func addSubviews() {
+    func addSubviews() {
         addSubview(tableView)
     }
 
-    private func makeConstraints() {
+    func makeConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -71,7 +74,7 @@ extension SectionsListView: Configurable {
 
 extension SectionsListView: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.cellViewModels.count ?? 0
+        return viewModel?.cellViewModels.count ?? .zero
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

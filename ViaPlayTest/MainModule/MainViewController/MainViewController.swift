@@ -6,8 +6,6 @@ protocol MainDisplayLogic: UIViewController {
 }
 
 final class MainViewController: UIViewController {
-    // MARK: - Public Properties
-
     // MARK: - Private Properties
 
     private let viewModel: MainBusinessLogic
@@ -34,15 +32,17 @@ final class MainViewController: UIViewController {
         addObservers()
         obtainInitialState()
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
 
-    private func obtainInitialState() {
+private extension MainViewController {
+    func obtainInitialState() {
         contentView.showLoading()
         viewModel.obtain(request: .init())
     }
     
-    private func addObservers() {
+    func addObservers() {
         viewModel.childViewModel.bind { [weak self] contentViewModel in
             self?.display(viewModel: contentViewModel)
         }
