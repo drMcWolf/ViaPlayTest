@@ -1,7 +1,5 @@
-public enum Main {
-    public enum Output {
-        case onSectionDetails(VPSection)
-    }
+public enum SectionDetails {
+    public enum Output {}
 
     enum Obtain {
         struct Request {}

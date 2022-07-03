@@ -1,7 +1,8 @@
 import Foundation
 
 protocol MainApiServiceProtocol {
-    func fetchCategories(completion: @escaping (Result<[VPSectionDTO], Error>) -> Void)
+    func fetchSections(completion: @escaping (Result<[VPSectionDTO], Error>) -> Void)
+    func fetchSectionDetails(link: String, completion: @escaping (Result<VPSectionDetailsDTO, Error>) -> Void)
 }
 
 final class MainApiService {
@@ -17,7 +18,7 @@ final class MainApiService {
 }
 
 extension MainApiService: MainApiServiceProtocol {
-    func fetchCategories(completion: @escaping (Result<[VPSectionDTO], Error>) -> Void) {
+    func fetchSections(completion: @escaping (Result<[VPSectionDTO], Error>) -> Void) {
         networkLayer.get(url: Constants.categoriesUrl) { result in
             switch result {
             case let .success(data):
@@ -32,4 +33,21 @@ extension MainApiService: MainApiServiceProtocol {
             }
         }
     }
+    
+    func fetchSectionDetails(link: String, completion: @escaping (Result<VPSectionDetailsDTO, Error>) -> Void) {
+        networkLayer.get(url: link) { result in
+            switch result {
+            case let .success(data):
+                do {
+                    let dto = try self.decoder.decode(VPSectionDetailsDTO.self, from: data)
+                    completion(.success(dto))
+                }catch {
+                    completion(.failure(error))
+                }
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
 }

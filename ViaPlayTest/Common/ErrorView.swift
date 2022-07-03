@@ -34,7 +34,7 @@ final class ErrorView: UIView {
     
     // MARK: - Public Properties
     
-    weak var delegate: ErrorViewDelegate?
+    var actionHandler: (() -> Void)?
     
     // MARK: - UIView
 
@@ -79,7 +79,7 @@ private extension ErrorView {
     }
     
     @objc func actionButtonDidTap() {
-        delegate?.actionButtonPressed()
+        actionHandler?()
     }
 }
 

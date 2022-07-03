@@ -1,23 +1,26 @@
+//
+//  SectionDetailsContainerView.swift
+//  ViaPlayTest
+//
+//  Created by Ivan Makarov on 03.07.2022.
+//
+
 import UIKit
 
-protocol SectionsListContentViewProtocol {
-    func showContent(viewModel: SectionsListView.ViewModel)
+protocol SectionDetailsContentViewProtocol {
+    func showContent(viewModel: SectionDetailsView.ViewModel)
     func showLoading()
     func showError(viewModel: ErrorView.ViewModel)
 }
 
-class SectionsListContentView: UIView {
+class SectionDetailsContentView: UIView {
     // MARK: - Subviews
     
-    private lazy var contentView = SectionsListView()
+    private lazy var contentView = SectionDetailsView()
     private lazy var errorView = ErrorView()
-    private lazy var loadingView = SectionsListLoadingView()
+    private lazy var loadingView = SectionDetailsLoadingView()
     
     // MARK: - Public Properties
-    
-    var selectedInndex: Observable<Int?> {
-        contentView.selectedInndex
-    }
     
     var actionHandler: (() -> Void)? {
         get {
@@ -39,11 +42,12 @@ class SectionsListContentView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 // MARK: - Private Methods
 
-private extension SectionsListContentView {
+private extension SectionDetailsContentView {
     func commonInit() {
         addSubviews()
         makeConstraints()
@@ -83,10 +87,10 @@ private extension SectionsListContentView {
     }
 }
 
-// MARK: - CityListContentViewProtocol
+// MARK: - SectionDetailsContentViewProtocol
 
-extension SectionsListContentView: SectionsListContentViewProtocol {
-    func showContent(viewModel: SectionsListView.ViewModel) {
+extension SectionDetailsContentView: SectionDetailsContentViewProtocol {
+    func showContent(viewModel: SectionDetailsView.ViewModel) {
         contentView.configure(with: viewModel)
         show(view: contentView)
     }

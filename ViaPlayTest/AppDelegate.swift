@@ -17,11 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
+        
         let mainAssembly = MainAssembly()
+        let sectionDetailsAssembly = SectionDetailsAssembly()
+        
         let mainCoordinator = MainFlowCoordinator(
             navigationController: navigationController,
-            mainScreenAssembly: mainAssembly
+            mainScreenAssembly: mainAssembly,
+            sectionDetailsAssembly: sectionDetailsAssembly
         )
+        
         mainCoordinator.start()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

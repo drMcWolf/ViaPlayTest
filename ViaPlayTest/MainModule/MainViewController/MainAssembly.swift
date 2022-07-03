@@ -10,7 +10,7 @@ final class MainAssembly: MainAssemblyProtocol {
         let networkLayer = NetworkLayer()
         let api = MainApiService(networkLayer: networkLayer)
         let service = MainService(api: api)
-        let viewModel = MainViewModel(service: service)
+        let viewModel = MainViewModel(service: service, output: output)
         let viewController = MainViewController(viewModel: viewModel)
         
         return viewController

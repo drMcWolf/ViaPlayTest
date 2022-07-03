@@ -1,6 +1,6 @@
 import Foundation
 
-struct VPSection {
+public struct VPSection {
     let id: String
     let title: String
     let link: String
@@ -8,6 +8,6 @@ struct VPSection {
     init(dto: VPSectionDTO) {
         self.id = dto.id
         self.title = dto.title
-        link = dto.href
+        link = dto.href.replacingOccurrences(of: "{?dtg,productsPerPage}", with: "")
     }
 }

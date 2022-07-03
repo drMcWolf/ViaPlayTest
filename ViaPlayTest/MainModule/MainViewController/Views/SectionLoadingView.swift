@@ -17,8 +17,8 @@ class SectionLoadingView: UIView {
     }()
     
     
-    private lazy var titleLoadingView = LoadingView(frame: .init(x: 0, y: 0, width: 200, height: 20))
-    private lazy var separatorView = LoadingView(frame: .init(x: 0, y: 0, width: 200, height: 1))
+    private lazy var titleLoadingView = LoadingView()
+    private lazy var separatorView = LoadingView()
     
     // MARK: - UIView
 

@@ -6,6 +6,8 @@ public final class SectionsListView: UIView {
     }
     // MARK: - Public Properties
 
+    let selectedInndex: Observable<Int?> = .init(nil)
+    
     // MARK: - Subview Properties
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -84,6 +86,7 @@ extension SectionsListView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedInndex.value = indexPath.row
     }
 }
 
