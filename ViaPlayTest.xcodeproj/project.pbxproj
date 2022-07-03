@@ -11,6 +11,11 @@
 		EA2DF994287099B200516F2E /* VPSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF993287099B200516F2E /* VPSection.swift */; };
 		EA2DF99628709CB000516F2E /* VPContentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF99528709CB000516F2E /* VPContentResponseDTO.swift */; };
 		EA2DF9992870AE4000516F2E /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF9982870AE4000516F2E /* Observable.swift */; };
+		EA2DF99B2870B46C00516F2E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF99A2870B46C00516F2E /* LoadingView.swift */; };
+		EA2DF99D2870B47F00516F2E /* SectionLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF99C2870B47F00516F2E /* SectionLoadingView.swift */; };
+		EA2DF99F2870B4EA00516F2E /* SectionsListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF99E2870B4EA00516F2E /* SectionsListContentView.swift */; };
+		EA2DF9A12870B5D400516F2E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF9A02870B5D400516F2E /* ErrorView.swift */; };
+		EA2DF9A32870B68D00516F2E /* SectionsListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2DF9A22870B68D00516F2E /* SectionsListLoadingView.swift */; };
 		EA658110286C1F38001DFD61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA65810F286C1F38001DFD61 /* AppDelegate.swift */; };
 		EA65811A286C1F38001DFD61 /* ViaPlayTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EA658118286C1F38001DFD61 /* ViaPlayTest.xcdatamodeld */; };
 		EA65811C286C1F39001DFD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA65811B286C1F39001DFD61 /* Assets.xcassets */; };
@@ -18,7 +23,7 @@
 		EA65812B286C2076001DFD61 /* MainFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658127286C2076001DFD61 /* MainFlowCoordinator.swift */; };
 		EA65813A286C20D5001DFD61 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658131286C20D5001DFD61 /* MainViewController.swift */; };
 		EA65813E286C20D5001DFD61 /* MainDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658135286C20D5001DFD61 /* MainDataFlow.swift */; };
-		EA65813F286C20D5001DFD61 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658137286C20D5001DFD61 /* MainView.swift */; };
+		EA65813F286C20D5001DFD61 /* SectionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658137286C20D5001DFD61 /* SectionsListView.swift */; };
 		EA658140286C20D5001DFD61 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658138286C20D5001DFD61 /* MainAssembly.swift */; };
 		EA658144286C22B3001DFD61 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658143286C22B3001DFD61 /* MainViewModel.swift */; };
 		EA658147286C244A001DFD61 /* MainApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA658146286C244A001DFD61 /* MainApiService.swift */; };
@@ -34,6 +39,11 @@
 		EA2DF993287099B200516F2E /* VPSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPSection.swift; sourceTree = "<group>"; };
 		EA2DF99528709CB000516F2E /* VPContentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPContentResponseDTO.swift; sourceTree = "<group>"; };
 		EA2DF9982870AE4000516F2E /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EA2DF99A2870B46C00516F2E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		EA2DF99C2870B47F00516F2E /* SectionLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionLoadingView.swift; sourceTree = "<group>"; };
+		EA2DF99E2870B4EA00516F2E /* SectionsListContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsListContentView.swift; sourceTree = "<group>"; };
+		EA2DF9A02870B5D400516F2E /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		EA2DF9A22870B68D00516F2E /* SectionsListLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsListLoadingView.swift; sourceTree = "<group>"; };
 		EA65810C286C1F38001DFD61 /* ViaPlayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViaPlayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA65810F286C1F38001DFD61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA658119286C1F38001DFD61 /* ViaPlayTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViaPlayTest.xcdatamodel; sourceTree = "<group>"; };
@@ -43,7 +53,7 @@
 		EA658127286C2076001DFD61 /* MainFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFlowCoordinator.swift; sourceTree = "<group>"; };
 		EA658131286C20D5001DFD61 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EA658135286C20D5001DFD61 /* MainDataFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataFlow.swift; sourceTree = "<group>"; };
-		EA658137286C20D5001DFD61 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EA658137286C20D5001DFD61 /* SectionsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionsListView.swift; sourceTree = "<group>"; };
 		EA658138286C20D5001DFD61 /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		EA658143286C22B3001DFD61 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EA658146286C244A001DFD61 /* MainApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApiService.swift; sourceTree = "<group>"; };
@@ -123,7 +133,10 @@
 		EA658136286C20D5001DFD61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA658137286C20D5001DFD61 /* MainView.swift */,
+				EA658137286C20D5001DFD61 /* SectionsListView.swift */,
+				EA2DF99E2870B4EA00516F2E /* SectionsListContentView.swift */,
+				EA2DF9A22870B68D00516F2E /* SectionsListLoadingView.swift */,
+				EA2DF99C2870B47F00516F2E /* SectionLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +172,8 @@
 			children = (
 				EA658150286C258B001DFD61 /* Configurable.swift */,
 				EA2DF9982870AE4000516F2E /* Observable.swift */,
+				EA2DF99A2870B46C00516F2E /* LoadingView.swift */,
+				EA2DF9A02870B5D400516F2E /* ErrorView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -252,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA65815B286C275D001DFD61 /* MainService.swift in Sources */,
-				EA65813F286C20D5001DFD61 /* MainView.swift in Sources */,
+				EA65813F286C20D5001DFD61 /* SectionsListView.swift in Sources */,
+				EA2DF99F2870B4EA00516F2E /* SectionsListContentView.swift in Sources */,
+				EA2DF99D2870B47F00516F2E /* SectionLoadingView.swift in Sources */,
 				EA2DF991287094F300516F2E /* VPSectionDTO.swift in Sources */,
 				EA658140286C20D5001DFD61 /* MainAssembly.swift in Sources */,
 				EA658110286C1F38001DFD61 /* AppDelegate.swift in Sources */,
@@ -268,7 +285,10 @@
 				EA65814C286C2483001DFD61 /* NetworkLayer.swift in Sources */,
 				EA65814E286C2483001DFD61 /* AsyncOperation.swift in Sources */,
 				EA658147286C244A001DFD61 /* MainApiService.swift in Sources */,
+				EA2DF99B2870B46C00516F2E /* LoadingView.swift in Sources */,
 				EA2DF994287099B200516F2E /* VPSection.swift in Sources */,
+				EA2DF9A12870B5D400516F2E /* ErrorView.swift in Sources */,
+				EA2DF9A32870B68D00516F2E /* SectionsListLoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

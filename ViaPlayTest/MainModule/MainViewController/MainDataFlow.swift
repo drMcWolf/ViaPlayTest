@@ -4,6 +4,8 @@ public enum Main {
     enum Obtain {
         struct Request {}
         struct Response {}
-        enum Error: Swift.Error {}
+        enum Error: Swift.Error {
+            case defaultError
+        }
     }
 }

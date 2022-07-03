@@ -1,7 +1,8 @@
 import UIKit
 
-public protocol MainDisplayLogic: UIViewController {
-    func display(viewModel: MainView.ViewModel)
+protocol MainDisplayLogic: UIViewController {
+    func display(viewModel: SectionsListView.ViewModel)
+    func display(error: ErrorView.ViewModel)
 }
 
 final class MainViewController: UIViewController {
@@ -13,7 +14,7 @@ final class MainViewController: UIViewController {
     
     // MARK: - Subview Properties
 
-    private lazy var contentView = MainView()
+    private lazy var contentView = SectionsListContentView()
 
     // MARK: - UIViewController
 
@@ -30,18 +31,40 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addObservers()
         obtainInitialState()
     }
 
     // MARK: - Private Methods
 
     private func obtainInitialState() {
+        contentView.showLoading()
         viewModel.obtain(request: .init())
+    }
+    
+    private func addObservers() {
+        viewModel.childViewModel.bind { [weak self] contentViewModel in
+            self?.display(viewModel: contentViewModel)
+        }
+        
+        viewModel.error.bind { [weak self] errorViewModel in
+            if let errorViewModel = errorViewModel {
+                self?.display(error: errorViewModel)
+            }
+        }
     }
 }
 
 // MARK: - MainDisplayLogic
 
 extension MainViewController: MainDisplayLogic {
-    func display(viewModel: MainView.ViewModel) {}
+    func display(viewModel: SectionsListView.ViewModel) {
+        title = viewModel.title
+        contentView.showContent(viewModel: viewModel)
+    }
+    
+    func display(error: ErrorView.ViewModel) {
+        title = error.title
+        contentView.showError(viewModel: error)
+    }
 }

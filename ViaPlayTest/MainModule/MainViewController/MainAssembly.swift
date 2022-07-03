@@ -1,5 +1,5 @@
  
-public protocol MainAssemblyProtocol {
+protocol MainAssemblyProtocol {
     func assemble(output: MainModuleOutput) -> MainDisplayLogic
 }
 

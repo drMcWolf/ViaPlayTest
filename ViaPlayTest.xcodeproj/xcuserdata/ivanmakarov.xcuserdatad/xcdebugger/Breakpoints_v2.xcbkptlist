@@ -14,8 +14,8 @@
             filePath = "ViaPlayTest/MainModule/MainViewController/Views/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "init(frame:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,15 +23,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "837F566B-D1AC-4E6A-9E84-04CDCA44090A"
-            shouldBeEnabled = "Yes"
+            uuid = "2ED5C4DE-CDFE-4E6C-AE15-7D7D92B04F73"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ViaPlayTest/MainModule/MainViewController/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "obtain(request:)"
             landmarkType = "7">
          </BreakpointContent>
